@@ -10,3 +10,6 @@ Session.vim
 # auto-generated tag files
 tags
 *.orig
+
+.idea/workspace.xml
+.idea/tasks.xml
