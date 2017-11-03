@@ -1,7 +1,8 @@
 public class IntStack {
 	public static void main(String[] args) {
 		IntStack is = new IntStack();
-		System.out.println(is.isEmpty());
+        System.out.println(is.size());
+        System.out.println(is.isEmpty());
 		is.push(3);
 		is.push(4);
 		is.push(5);
@@ -49,7 +50,7 @@ public class IntStack {
     how large is the stack?
     */
     public int size() {
-		return 0;
+        return stack.length;
     }
 
     /*
