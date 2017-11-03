@@ -75,7 +75,10 @@ public class IntList {
     swap — swaps the elements at specified positions in a List.
     */
     static void swap(IntList l, int i, int j) {
-
+        int copyi = l.get(i);
+        int copyj = l.get(j);
+        l.set(i, copyj);
+        l.set(j, copyi);
     }
 
     /*
