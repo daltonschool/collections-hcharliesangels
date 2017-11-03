@@ -42,7 +42,11 @@ public class IntStack {
     make a new larger implementing array
     */
     private void resize() {
-
+        int[] temp = new int[stack.length*stack.length];
+        for (int i = 0; i < stack.length; i++) {
+            temp[i] = stack[i];
+        }
+        stack = temp;
     }
 
     /*
