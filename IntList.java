@@ -2,6 +2,28 @@ public class IntList {
     private int[] arr;
     int size = 0;
 
+    public static void main(String[] args) {
+        IntList list = new IntList(7);
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        list.add(7);
+
+        for (int i = 0; i < list.size; i++) {
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println();
+
+        IntList.reverse(list);
+
+        for (int i = 0; i < list.size; i++) {
+            System.out.print(list.get(i) + " ");
+        }
+    }
+
     public IntList(int default_size) {
       arr = new int[default_size];
     }
@@ -61,6 +83,11 @@ public class IntList {
     reverse — reverses the order of the elements in a List.
     */
     static void reverse(IntList l) {
+        IntList reverse = new IntList(l.size);
+        for (int i = 0 ; i <l.size; i++){
+            reverse.add(0, l.get(i));
+        }
+        l.arr = reverse.arr;
 
     }
 
