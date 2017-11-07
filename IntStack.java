@@ -8,7 +8,7 @@ public class IntStack {
 		is.push(5);
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
-		System.out.println(is.peek());
+		System.out.println(is.peek(1));
 	}
 	
 	
@@ -75,7 +75,7 @@ public class IntStack {
     return the item depth distance from the top
     */
     public int peek(int depth) {
-			return 0;
+            return stack[top-depth];
     }
 
     /*
