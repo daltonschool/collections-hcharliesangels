@@ -5,6 +5,14 @@ public class IntSet {
         System.out.println(devin.contains(30));
         devin.add(30);
         System.out.println(devin.contains(30));
+        IntSet s = new IntSet(20);
+        s.add(3);
+        s.add(5);
+        s.add(8);
+        devin.addAll(s);
+        System.out.println(devin.contains(3));
+        System.out.println(devin.contains(8));
+        System.out.println(devin.contains(12));
     }
 
 
@@ -39,6 +47,11 @@ public class IntSet {
     add all items in set s to this set.
     */
     void addAll(IntSet s) {
+        for (int i = 0; i < s.arr.length; i++) {
+            if(s.contains(i)) {
+                arr[i] = true;
+            }
+        }
 
     }
 
