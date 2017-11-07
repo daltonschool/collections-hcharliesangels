@@ -1,4 +1,20 @@
+import java.util.Arrays;
+
 public class IntDeque {
+  public static void main(String[] args) {
+    //Claire's Testing Area:
+    IntDeque q = new IntDeque(7);
+    q.putLast(1);
+    q.putLast(2);
+    q.putLast(3);
+    q.putLast(4);
+
+    //cheat print:
+    System.out.println(Arrays.toString(q.q));
+
+  }
+
+
   int[] q;
   int head, tail;
 
@@ -19,7 +35,9 @@ public class IntDeque {
   put the last item
   */
   public void putLast(int item) {
-
+    q[tail++] = item;
+    if(tail==q.length) tail = 0;
+    if(tail==head) resize();
   }
 
   /*
@@ -46,15 +64,17 @@ public class IntDeque {
   /*
   get the last item
   */
-  public int getLast() {
-    return 0;
-  }
+  public int getLast() { return 0; }
 
   /*
   move num items from first to last
   */
   public void circ(int num) {
 
+  }
+
+  public void resize() {
+    //needs to be done!
   }
 
   /*
