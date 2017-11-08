@@ -1,16 +1,18 @@
+import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
+
 import java.util.Arrays;
 
 public class IntDeque {
   public static void main(String[] args) {
     //Claire's Testing Area:
-    IntDeque q = new IntDeque(7);
+    IntDeque q = new IntDeque(2);
     q.putLast(1);
     q.putLast(2);
     q.putLast(3);
     q.putLast(4);
-
+    q.putLast(5);
     //cheat print:
-    System.out.println(Arrays.toString(q.q));
+    q.print();
 
   }
 
@@ -35,9 +37,11 @@ public class IntDeque {
   put the last item
   */
   public void putLast(int item) {
-    q[tail++] = item;
-    if(tail==q.length) tail = 0;
-    if(tail==head) resize();
+    q[tail] = item;
+    tail++;
+    if (tail==q.length) tail=0;
+    if (tail == head) resize();
+
   }
 
   /*
@@ -75,6 +79,26 @@ public class IntDeque {
 
   public void resize() {
     //needs to be done!
+    int[] resizedArr = new int[q.length*2];
+    int newarr = 0;
+
+    for (int i = head; i < q.length; i++) {
+      resizedArr[newarr++] = q[i];
+    }
+    for (int i = 0; i < tail; i++) {
+      resizedArr[newarr++] = q[i];
+    }
+
+
+    //set head and tail:
+    tail = newarr;
+    head = 0;
+
+    //reassign:
+    q=resizedArr;
+
+
+    print();
   }
 
   /*
@@ -103,7 +127,14 @@ public class IntDeque {
   print the Deque to the screen
   */
   public void print() {
-
+    System.out.println(Arrays.toString(q));
+    int i = head;
+    System.out.print("HEAD > ");
+    while(i!=tail) {
+      System.out.print(q[i++] + " > " );
+      if(i==q.length) i=0;
+    }
+    System.out.println("TAIL");
   }
 
     /*
