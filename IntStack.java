@@ -8,7 +8,7 @@ public class IntStack {
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
-	}
+    }
 	
 	
 	int[] stack;

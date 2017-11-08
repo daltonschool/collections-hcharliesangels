@@ -1,4 +1,17 @@
+import java.util.Arrays;
+
 public class IntDeque {
+  public static void main(String[] args) {
+    //ava testing
+    IntDeque q = new IntDeque(14);
+    q.putFirst(3);
+    q.putFirst(4);
+    q.putFirst(5);
+    q.putFirst(8);
+    System.out.println(Arrays.toString(q.q));
+    System.out.println(q.getFirst());
+   }
+
   int[] q;
   int head, tail;
 
@@ -12,7 +25,10 @@ public class IntDeque {
   put the first item
   */
   public void putFirst(int item) {
-
+    q[head] = item;
+    head--;
+    if (head==-1) head = q.length-1;
+    //if (head==tail) resize();
   }
 
   /*
@@ -39,8 +55,8 @@ public class IntDeque {
   /*
   get the first item
   */
-  public int getFirst() {
-    return 0;
+  public int getFirst(){
+    return q[++head];
   }
 
   /*
