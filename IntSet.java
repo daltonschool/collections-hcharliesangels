@@ -12,6 +12,17 @@ public class IntSet {
         elie.add(2);
         elie.add(4);
         elie.retainAll(elie);
+
+        //Ryo tests:
+        IntSet ryo = new IntSet(100);
+        IntSet ryo2 = new IntSet(100);
+        ryo.add(30);
+        ryo2.add(30);
+        ryo.removeAll(ryo2);
+        System.out.println(ryo.contains(30));
+        IntDeque x = new IntDeque(4);
+        System.out.println(x.peekFirst());
+
     }
 
 

@@ -20,7 +20,10 @@ public class IntStack {
         elie.push(9);
         elie.sort();
         System.out.println("sorted? " + Arrays.toString(elie.stack));
-	}
+
+        //Ryo Test
+        is.print();
+    }
 
 
 	int[] stack;
@@ -87,7 +90,9 @@ public class IntStack {
     print the Stack pretty-like
     */
     public void print() {
-
+        for(int i = 0; i < top; i++){
+            System.out.println(stack[i]);
+        }
     }
 
     /*

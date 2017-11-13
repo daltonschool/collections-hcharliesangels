@@ -14,6 +14,11 @@ public class IntDeque {
     //cheat print:
     q.print();
 
+  	//Ryo tests:
+    q[head] = 9;
+    System.out.println(peekFirst());
+    
+
   }
 
 
@@ -51,7 +56,7 @@ public class IntDeque {
   return the first item
   */
   public int peekFirst() {
-    return 0;
+    return q[head];
   }
 
   /*
