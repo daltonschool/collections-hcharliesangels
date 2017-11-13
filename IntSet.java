@@ -5,18 +5,35 @@ public class IntSet {
         System.out.println(devin.contains(30));
         devin.add(30);
         System.out.println(devin.contains(30));
+
+        //Test area for retainAll -Elie
+        IntSet elie = new IntSet(5);
+        elie.add(1);
+        elie.add(2);
+        elie.add(4);
+        elie.retainAll(elie);
+
+        //Ryo tests:
+        IntSet ryo = new IntSet(100);
+        IntSet ryo2 = new IntSet(100);
+        ryo.add(30);
+        ryo2.add(30);
+        ryo.removeAll(ryo2);
+        System.out.println(ryo.contains(30));
+        IntDeque x = new IntDeque(4);
+        System.out.println(x.peekFirst());
+
     }
 
 
     boolean[] arr;
 
+
     public IntSet(int size) {
         arr = new boolean[size];
     }
 
-    void add(int i) {
-        arr[i] = true;
-    }
+    void add(int i) { arr[i] = true; }
 
     void remove(int i) {
         arr[i] = false;
@@ -51,7 +68,22 @@ public class IntSet {
     remove all items from this set that are not in set s (intersection)
     */
     void retainAll(IntSet s) {
+        boolean[] thisSet = new boolean[10];
+        for (int i = 0; i < thisSet.length; i++) {
+            thisSet[i] = true;
+        }
 
+        if (thisSet.length >= arr.length) {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == true && thisSet[i] == true) thisSet[i] = true;
+                else thisSet[i] = false;
+            }
+        } else {
+            for (int i = 0; i < thisSet.length; i++) {
+                if (arr[i] == true && thisSet[i] == true);
+                else thisSet[i] = false;
+            }
+        }
     }
 
     /*
@@ -114,8 +146,12 @@ public class IntSet {
     /*
     print the set pretty like.
     */
-    void print() {
-
+    String print(boolean[] l) {
+        String string = "";
+        for (int i = 0; i < l.length; i++) {
+            string+=l[i] + " ";
+        }
+        return string;
     }
 
     /*
