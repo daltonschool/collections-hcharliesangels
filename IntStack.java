@@ -21,32 +21,32 @@ public class IntStack {
         elie.sort();
         System.out.println("sorted? " + Arrays.toString(elie.stack));
 	}
-	
-	
+
+
 	int[] stack;
 	int top;
-	
+
 	public IntStack() {
 		stack = new int[100];
 		top = 0;
 	}
-	
+
 	boolean isEmpty() {
 		return top==0;
 	}
 
 	void push(int i) {
 		if(top==stack.length) resize();
-		stack[top++]=i;	 
+		stack[top++]=i;
 	}
 
 	int pop() {
 		if(!isEmpty()) return stack[--top];
 		return -1;
-  }	
+  }
 
 	int peek() {//sometimes
-		if(!isEmpty()) return stack[top-1];	
+		if(!isEmpty()) return stack[top-1];
 		return -1;
 	}
 
