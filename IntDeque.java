@@ -6,13 +6,16 @@ public class IntDeque {
     q = new int[defaultsize];
     head=0;
     tail=0;
+
+
   }
 
   /*
   put the first item
   */
   public void putFirst(int item) {
-
+//    if(head==tail) resize();
+//    q[head++]=item;
   }
 
   /*
