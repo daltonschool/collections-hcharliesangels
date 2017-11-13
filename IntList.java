@@ -67,8 +67,19 @@ public class IntList {
     /*
     rotate — rotates all the elements in a List by a specified distance.
     */
-    static void rotate(IntList l) {
-
+    static void rotate(IntList l, int distance) {
+        IntList a = new IntList(l.size);
+        for(int i=0; i< l.size; i++){
+            if(i+distance >= l.size){
+                a.set((distance-(l.size -i)), l.get(i));
+            }
+            else{
+                a.set(i+distance, l.get(i));
+            }
+        }
+        for(int k = 0; k < l.size; k++){
+            l.set(k, a.get(k));
+        }
     }
 
     /*

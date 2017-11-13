@@ -32,7 +32,12 @@ public class IntSet {
     returns true if s is a subset of set
     */
     boolean containsAll(IntSet s) {
-        return false;
+        for (int i = 0; i < s.arr.length; i++) {
+            if (s.arr[i] != arr[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /*
