@@ -1,38 +1,42 @@
 public class IntSet {
-    public static void main(String[] args) {
-        IntSet devin = new IntSet(100);
+	public static void main(String[] args) {
+		IntSet devin = new IntSet(100);
 
-        System.out.println(devin.contains(30));
-        devin.add(30);
-        System.out.println(devin.contains(30));
+		System.out.println(devin.contains(30));
+		devin.add(30);
+		System.out.println(devin.contains(30));
+        devin.multiplyAll(devin, 4);
+        System.out.println(devin);
+        System.out.println();
+        System.out.println(devin.multiplyAll(););
     }
+	
+	
+	boolean[] arr;
+	
+	public IntSet(int size) {
+		arr = new boolean[size];
+	}
 
+	void add(int i) {
+		arr[i] = true;
+	}
 
-    boolean[] arr;
+	void remove(int i) {
+		arr[i] = false;
+	}
 
-    public IntSet(int size) {
-        arr = new boolean[size];
-    }
+	boolean contains(int i) {
+		return arr[i];
+	}
 
-    void add(int i) {
-        arr[i] = true;
-    }
-
-    void remove(int i) {
-        arr[i] = false;
-    }
-
-    boolean contains(int i) {
-        return arr[i];
-    }
-
-    //BULK FUNCTIONS:
+	//BULK FUNCTIONS:
 
     /*
     returns true if s is a subset of set
     */
     boolean containsAll(IntSet s) {
-        return false;
+      return false;
     }
 
     /*
@@ -67,28 +71,38 @@ public class IntSet {
       for any number in set s that is in this set, multiply this set by multiplier
     */
     void multiplyAll(IntSet s, int multiplier) {
-
+        int max = 100;
+        IntSet sMult = new IntSet(max / multiplier);
+        sMult = s;
+        for (int i = 0; i < this.arr.length; i++) {
+            s.multiplyAll(s, multiplier);
+            if (sMult.arr.length > max / multiplier) {
+               sMult.remove(arr.length/multiplier);
+        }
     }
 
     /*
     does the set contain all of the prime factors of number
     */
+
+
+
     boolean containsPrimeFactors(int number) {
-        return false;
+    	return false;
     }
 
     /*
     all the subsets that can be generated of subSetSize size
     */
     IntSet[] subSets(int subSetSize) {
-        return null;
+    	return null;
     }
 
     /*
     the subSetSize largest items
     */
     IntSet maxSubSet(int subSetSize) {
-        return null;
+    	return null;
     }
 
     /*
@@ -96,14 +110,14 @@ public class IntSet {
     the set of numbers above divide, and those below
     */
     IntSet[] discrete(int divide) {
-        return null;
+    	return null;
     }
 
     /*
     finds this intersection of this and all sets in the array
     */
     boolean containsAll(IntSet[] s) {
-        return false;
+    	return false;
     }
 
     /*
@@ -113,26 +127,26 @@ public class IntSet {
 
     }
 
-    /*
-    finds the gcd of the set
-    */
-    int gcd() {
-        return 0;
-    }
+		/*
+		finds the gcd of the set
+		*/
+		int gcd() {
+			return 0;
+		}
 
-    /*
-    finds the mean of the set
-    */
-    int mean() {
-        return 0;
-    }
+		/*
+		finds the mean of the set
+		*/
+		int mean() {
+			return 0;
+		}
 
-    /*
-    returns a set with only the bottom n items in the set
-    */
-    IntSet bottom(int n) {
-        return null;
-    }
+		/*
+		returns a set with only the bottom n items in the set
+		*/
+		IntSet bottom(int n) {
+return null;
+		}
 
 }
 
