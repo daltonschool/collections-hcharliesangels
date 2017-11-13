@@ -56,10 +56,11 @@ public class IntList {
    private int number;
 
    public IntList sort(IntList l) {
-           numbers = values;
-           number = values.length;
-           helper = new int[number];
-           mergesort(0, number - 1);
+//           numbers = values;
+//           number = values.length;
+//           helper = new int[number];
+//           mergesort(0, number - 1);
+       return null; //from charlie, this des not compile.
 
        }
 
@@ -78,25 +79,7 @@ public class IntList {
    }
 
    private void merge(int low, int middle, int high) {
-
-    /*
-    rotate — rotates all the elements in a List by a specified distance.
-    */
-    static void rotate(IntList l, int distance) {
-        IntList a = new IntList(l.size);
-        for(int i=0; i< l.size; i++){
-            if(i+distance >= l.size){
-                a.set((distance-(l.size -i)), l.get(i));
-            }
-            else{
-                a.set(i+distance, l.get(i));
-            }
-        }
-        for(int k = 0; k < l.size; k++){
-            l.set(k, a.get(k));
-        }
-    }
-       // Copy both parts into the helper array
+// Copy both parts into the helper array
        for (int i = low; i <= high; i++) {
            helper[i] = numbers[i];
        }
@@ -125,9 +108,26 @@ public class IntList {
        // Since we are sorting in-place any leftover elements from the right side
        // are already at the right position.
 
+
    }
-}
-   }
+
+    /*
+     rotate — rotates all the elements in a List by a specified distance.
+     */
+    static void rotate(IntList l, int distance) {
+        IntList a = new IntList(l.size);
+        for(int i=0; i< l.size; i++){
+            if(i+distance >= l.size){
+                a.set((distance-(l.size -i)), l.get(i));
+            }
+            else{
+                a.set(i+distance, l.get(i));
+            }
+        }
+        for(int k = 0; k < l.size; k++){
+            l.set(k, a.get(k));
+        }
+    }
 
 
    /*

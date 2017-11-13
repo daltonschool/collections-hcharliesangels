@@ -5,30 +5,28 @@ import java.util.Arrays;
 public class IntDeque {
   public static void main(String[] args) {
     //ava testing
-    IntDeque q = new IntDeque(14);
-    q.putFirst(3);
-    q.putFirst(4);
-    q.putFirst(5);
-    q.putFirst(8);
-    System.out.println(Arrays.toString(q.q));
-    System.out.println(q.getFirst());
-   }
+    IntDeque ava = new IntDeque(14);
+    ava.putFirst(3);
+    ava.putFirst(4);
+    ava.putFirst(5);
+    ava.putFirst(8);
+    System.out.println(Arrays.toString(ava.q));
+    System.out.println(ava.getFirst());
 
-  public static void main(String[] args) {
     //Claire's Testing Area:
-    IntDeque q = new IntDeque(2);
-    q.putLast(1);
-    q.putLast(2);
-    q.putLast(3);
-    q.putLast(4);
-    q.putLast(5);
+    IntDeque cla = new IntDeque(2);
+    cla.putLast(1);
+    cla.putLast(2);
+    cla.putLast(3);
+    cla.putLast(4);
+    cla.putLast(5);
     //cheat print:
-    q.print();
+    cla.print();
 
   	//Ryo tests:
-    q[head] = 9;
-    System.out.println(peekFirst());
-    
+    //q[head] = 9;
+    //System.out.println(peekFirst());
+    //RYO!! your code doesn't work
 
   }
 
