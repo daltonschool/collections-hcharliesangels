@@ -1,41 +1,55 @@
+import java.util.Arrays;
+
 public class IntStack {
 	public static void main(String[] args) {
 		IntStack is = new IntStack();
-        System.out.println(is.size());
-        System.out.println(is.isEmpty());
+		System.out.println(is.isEmpty());
 		is.push(3);
 		is.push(4);
 		is.push(5);
 		System.out.println(is.isEmpty());
 		System.out.println(is.pop());
 		System.out.println(is.peek());
-	}
-	
-	
+
+		//testing area for sort -Elie
+        IntStack elie = new IntStack();
+        elie.push(3);
+        elie.push(2);
+        elie.push(5);
+        elie.push(1);
+        elie.push(9);
+        elie.sort();
+        System.out.println("sorted? " + Arrays.toString(elie.stack));
+
+        //Ryo Test
+        is.print();
+    }
+
+
 	int[] stack;
 	int top;
-	
+
 	public IntStack() {
 		stack = new int[100];
 		top = 0;
 	}
-	
+
 	boolean isEmpty() {
 		return top==0;
 	}
 
 	void push(int i) {
 		if(top==stack.length) resize();
-		stack[top++]=i;	 
+		stack[top++]=i;
 	}
 
 	int pop() {
 		if(!isEmpty()) return stack[--top];
 		return -1;
-  }	
+  }
 
 	int peek() {//sometimes
-		if(!isEmpty()) return stack[top-1];	
+		if(!isEmpty()) return stack[top-1];
 		return -1;
 	}
 
@@ -54,21 +68,31 @@ public class IntStack {
     how large is the stack?
     */
     public int size() {
-        return stack.length;
+		return 0;
     }
 
     /*
     sort the contents of the stack
     */
     public void sort() {
-
+        //sorts stack
+        Arrays.sort(stack);
+        //flips order of stack, largest to smallest
+        for (int i = 0; i < stack.length/2; i++) {
+            int temp = stack[i];
+            stack[i] = stack[stack.length-1-i];
+            stack[stack.length-1-i] = temp;
+        }
     }
+
 
     /*
     print the Stack pretty-like
     */
     public void print() {
-
+        for(int i = 0; i < top; i++){
+            System.out.println(stack[i]);
+        }
     }
 
     /*
