@@ -31,10 +31,8 @@ public class IntStack {
         Jared.push(12);
         Jared.push(13);
 
-
-        for(int i = 0; i < Jared.pop(1).length; i++){
-            System.out.println(Jared.pop(1)[i]);
-        }
+        int[] multiple = Jared.pop(3);
+        System.out.println(Arrays.toString(multiple));
     }
 
 
@@ -103,8 +101,9 @@ public class IntStack {
     */
     public void print() {
         for(int i = 0; i < top; i++){
-            System.out.println(stack[i]);
+            System.out.print(stack[i] + " ");
         }
+        System.out.println();
     }
 
     /*
