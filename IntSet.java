@@ -1,49 +1,76 @@
 public class IntSet {
 	public static void main(String[] args) {
 		IntSet devin = new IntSet(7);
+
+		//Jared Testing
 		IntSet jared = new IntSet(7);
-
-		//System.out.println(devin.contains(30));
-		//devin.add(30);
-		//System.out.println(devin.contains(30));
-
-		//Jared test
+        IntSet jared2 = new IntSet(7);
         jared.add(1);
         jared.add(2);
         jared.add(3);
-        devin.add(3);
-        devin.incrementAll(jared);
-        System.out.println(devin.contains(4));
-        System.out.println(devin.contains(3));
-        System.out.println(devin.contains(2));
+        jared2.add(3);
+        jared2.incrementAll(jared);
+        System.out.println(jared2.contains(4));
+        System.out.println(jared2.contains(3));
+        System.out.println(jared2.contains(2));
+
+        //Test area for retainAll -Elie
+        IntSet elie = new IntSet(5);
+        elie.add(1);
+        elie.add(2);
+        elie.add(4);
+        elie.retainAll(elie);
+
+        //Ryo tests:
+        IntSet ryo = new IntSet(100);
+        IntSet ryo2 = new IntSet(100);
+        ryo.add(30);
+        ryo2.add(30);
+        ryo.removeAll(ryo2);
+        System.out.println(ryo.contains(30));
+        IntDeque x = new IntDeque(4);
+        System.out.println(x.peekFirst());
+
+        //malcolm's tests:
+		System.out.println(devin.contains(30));
+		devin.add(30);
+		System.out.println(devin.contains(30));
+        devin.multiplyAll(devin, 4);
+        System.out.println(devin);
+        System.out.println();
+
     }
-	
-	
-	boolean[] arr;
-	
-	public IntSet(int size) {
-		arr = new boolean[size];
-	}
 
-	void add(int i) {
-		arr[i] = true;
-	}
 
-	void remove(int i) {
-		arr[i] = false;
-	}
+    boolean[] arr;
 
-	boolean contains(int i) {
-		return arr[i];
-	}
 
-	//BULK FUNCTIONS:
+    public IntSet(int size) {
+        arr = new boolean[size];
+    }
+
+    void add(int i) { arr[i] = true; }
+
+    void remove(int i) {
+        arr[i] = false;
+    }
+
+    boolean contains(int i) {
+        return arr[i];
+    }
+
+    //BULK FUNCTIONS:
 
     /*
     returns true if s is a subset of set
     */
     boolean containsAll(IntSet s) {
-      return false;
+        for (int i = 0; i < s.arr.length; i++) {
+            if (s.arr[i] != arr[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /*
@@ -57,7 +84,22 @@ public class IntSet {
     remove all items from this set that are not in set s (intersection)
     */
     void retainAll(IntSet s) {
+        boolean[] thisSet = new boolean[10];
+        for (int i = 0; i < thisSet.length; i++) {
+            thisSet[i] = true;
+        }
 
+        if (thisSet.length >= arr.length) {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == true && thisSet[i] == true) thisSet[i] = true;
+                else thisSet[i] = false;
+            }
+        } else {
+            for (int i = 0; i < thisSet.length; i++) {
+                if (arr[i] == true && thisSet[i] == true);
+                else thisSet[i] = false;
+            }
+        }
     }
 
     /*
@@ -91,7 +133,15 @@ public class IntSet {
       for any number in set s that is in this set, multiply this set by multiplier
     */
     void multiplyAll(IntSet s, int multiplier) {
-
+        int max = 100;
+        IntSet sMult = new IntSet(max / multiplier);
+        sMult = s;
+        for (int i = 0; i < this.arr.length; i++) {
+            s.multiplyAll(s, multiplier);
+            if (sMult.arr.length > max / multiplier) {
+                sMult.remove(arr.length / multiplier);
+            }
+        }
     }
 
     /*
@@ -133,8 +183,12 @@ public class IntSet {
     /*
     print the set pretty like.
     */
-    void print() {
-
+    String print(boolean[] l) {
+        String string = "";
+        for (int i = 0; i < l.length; i++) {
+            string+=l[i] + " ";
+        }
+        return string;
     }
 
 		/*
@@ -151,12 +205,12 @@ public class IntSet {
 			return 0;
 		}
 
-		/*
-		returns a set with only the bottom n items in the set
-		*/
-		IntSet bottom(int n) {
+    /*
+    returns a set with only the bottom n items in the set
+    */
+    IntSet bottom(int n) {
         return null;
-		}
+    }
 
 }
 
