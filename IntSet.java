@@ -1,11 +1,22 @@
 public class IntSet {
 	public static void main(String[] args) {
-		IntSet devin = new IntSet(100);
+		IntSet devin = new IntSet(7);
+		IntSet jared = new IntSet(7);
 
-		System.out.println(devin.contains(30));
-		devin.add(30);
-		System.out.println(devin.contains(30));
-	}
+		//System.out.println(devin.contains(30));
+		//devin.add(30);
+		//System.out.println(devin.contains(30));
+
+		//Jared test
+        jared.add(1);
+        jared.add(2);
+        jared.add(3);
+        devin.add(3);
+        devin.incrementAll(jared);
+        System.out.println(devin.contains(4));
+        System.out.println(devin.contains(3));
+        System.out.println(devin.contains(2));
+    }
 	
 	
 	boolean[] arr;
@@ -60,7 +71,20 @@ public class IntSet {
     increment every number in the set by 1
     */
     void incrementAll(IntSet s) {
+           Boolean a = false;
+           Boolean b = false;
 
+           for(int i = 0; i < this.arr.length; i++) {
+               a=b;
+               b = this.arr[i];
+               if(s.contains(i)){
+                   this.arr[i]=a;
+               }
+               if(i>0 && s.contains(i-1)) {
+                   this.arr[i] = a;
+               }
+
+        }
     }
 
     /*
@@ -131,7 +155,7 @@ public class IntSet {
 		returns a set with only the bottom n items in the set
 		*/
 		IntSet bottom(int n) {
-
+        return null;
 		}
 
 }
