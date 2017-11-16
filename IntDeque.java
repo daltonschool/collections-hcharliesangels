@@ -74,7 +74,7 @@ public class IntDeque {
   return the last item
   */
   public int peekLast() {
-    return 0;
+      return q[tail];
   }
 
   /*

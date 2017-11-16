@@ -23,6 +23,18 @@ public class IntStack {
 
         //Ryo Test
         is.print();
+
+		//Jared Test
+        IntStack Jared = new IntStack();
+        Jared.push(10);
+        Jared.push(11);
+        Jared.push(12);
+        Jared.push(13);
+
+
+        for(int i = 0; i < Jared.pop(1).length; i++){
+            System.out.println(Jared.pop(1)[i]);
+        }
     }
 
 
@@ -106,7 +118,12 @@ public class IntStack {
     return multiple items from the top in a new array
     */
     public int[] pop(int multiple) {
-			return null;
+        int[] array = new int[multiple];
+        for (int i = 0; i < multiple; i++) {
+             array[i] = pop();
+        }
+
+        return array;
     }
 
     /*
