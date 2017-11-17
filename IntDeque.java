@@ -25,9 +25,15 @@ public class IntDeque {
 
   	//Ryo tests:
     //q[head] = 9;
-    //System.out.println(peekFirst());
+//    System.out.println(peekFirst());
     //RYO!! your code doesn't work
 
+    //Jared test
+    IntDeque jared = new IntDeque(5);
+    jared.putFirst(2);
+    jared.putFirst(1);
+    System.out.println("JARED TEST");
+    System.out.println(jared.peekLast());
   }
 
 
