@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class IntSet {
 	public static void main(String[] args) {
 		IntSet devin = new IntSet(7);
@@ -9,8 +11,8 @@ public class IntSet {
         ryan.add(6);
         ryan.add(1);
         ryan.add(3);
-        System.out.println(print(ryan.arr));
-        System.out.println(print(ryan.maxSubSet(4).arr));
+        System.out.println(Arrays.toString(ryan.arr));
+        System.out.println(Arrays.toString(ryan.maxSubSet(4).arr));
 
         //Jared Testing
 		IntSet jared = new IntSet(7);
@@ -201,7 +203,7 @@ public class IntSet {
     /*
     print the set pretty like.
     */
-    public static String print(boolean[] l) {
+    String print(boolean[] l) {
         String string = "";
         for (int i = 0; i < l.length; i++) {
             string+=l[i] + " ";
