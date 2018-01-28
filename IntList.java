@@ -3,6 +3,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class IntList {
+    public static void main(String[] args){
+
+        //test for reverse
+        IntList ryan = new IntList(6);
+        ryan.add(1);
+        ryan.add(2);
+        ryan.add(3);
+        ryan.add(4);
+        ryan.add(5);
+        ryan.add(6);
+        for(int a = 0; a < ryan.size;a++){
+            System.out.print(ryan.arr[a]);
+        }
+        reverse(ryan);
+        System.out.println();
+        for(int a = 0; a < ryan.size;a++){
+            System.out.print(ryan.arr[a]);
+        }
+    }
+
    private int[] arr;
    int size = 0;
 
@@ -147,7 +167,9 @@ public class IntList {
    reverse — reverses the order of the elements in a List.
    */
    static void reverse(IntList l) {
-
+       IntList temp = new IntList(l.size);
+       for(int a = l.size; a > 0; a--) temp.add(l.get(a-1));
+       for(int a = 0; a < l.size; a++) l.set(a,temp.get(a));
    }
 
    /*
