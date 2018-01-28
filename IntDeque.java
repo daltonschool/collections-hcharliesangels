@@ -175,7 +175,7 @@ public class IntDeque {
     put an item on both sides
     */
     public void putBoth(int i) {
-        this.putFirst(i);
+        this.putFirst(i );
         this.putLast(i);
     }
 
