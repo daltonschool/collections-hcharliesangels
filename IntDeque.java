@@ -10,7 +10,11 @@ public class IntDeque {
     ava.putFirst(4);
     ava.putFirst(5);
     ava.putFirst(8);
+    //ryan putboth testing
     System.out.println(Arrays.toString(ava.q));
+    ava.putBoth(1);
+    ava.putBoth(2);
+      System.out.println(Arrays.toString(ava.q));
     System.out.println(ava.getFirst());
 
     //Claire's Testing Area:
@@ -42,10 +46,8 @@ public class IntDeque {
 
   public IntDeque(int defaultsize) {
     q = new int[defaultsize];
-    head=0;
+    head=defaultsize-1;
     tail=0;
-
-
   }
 
   /*
@@ -55,7 +57,7 @@ public class IntDeque {
     q[head] = item;
     head--;
     if (head==-1) head = q.length-1;
-    //if (head==tail) resize();
+    if (head==tail) resize();
   }
 
   /*
@@ -173,7 +175,8 @@ public class IntDeque {
     put an item on both sides
     */
     public void putBoth(int i) {
-        
+        this.putFirst(i);
+        this.putLast(i);
     }
 
     /*
