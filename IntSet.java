@@ -2,7 +2,17 @@ public class IntSet {
 	public static void main(String[] args) {
 		IntSet devin = new IntSet(7);
 
-		//Jared Testing
+        //Ryan Testing
+		IntSet ryan = new IntSet(7);
+        ryan.add(4);
+        ryan.add(2);
+        ryan.add(6);
+        ryan.add(1);
+        ryan.add(3);
+        System.out.println(print(ryan.arr));
+        System.out.println(print(ryan.maxSubSet(4).arr));
+
+        //Jared Testing
 		IntSet jared = new IntSet(7);
         IntSet jared2 = new IntSet(7);
         jared.add(1);
@@ -162,7 +172,15 @@ public class IntSet {
     the subSetSize largest items
     */
     IntSet maxSubSet(int subSetSize) {
-    	return null;
+    	IntSet subset = new IntSet(this.arr.length);
+    	int counter = 0;
+    	for(int a = this.arr.length-1; a > 0; a--){
+            if((counter<subSetSize) && this.arr[a]==true){
+                subset.add(a);
+                counter++;
+            }
+        }
+        return subset;
     }
 
     /*
@@ -183,7 +201,7 @@ public class IntSet {
     /*
     print the set pretty like.
     */
-    String print(boolean[] l) {
+    public static String print(boolean[] l) {
         String string = "";
         for (int i = 0; i < l.length; i++) {
             string+=l[i] + " ";
