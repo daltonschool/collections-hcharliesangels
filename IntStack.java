@@ -33,6 +33,14 @@ public class IntStack {
 
         int[] multiple = Jared.pop(3);
         System.out.println(Arrays.toString(multiple));
+
+
+        //Ryan Test
+        IntStack ryan = new IntStack();
+        int[] test = {1,2,3};
+        ryan.push(test);
+        System.out.println(Arrays.toString(ryan.stack));
+        System.out.println("ryan's stack");
     }
 
 
@@ -129,7 +137,9 @@ public class IntStack {
     push multiple items onto the stack
     */
     public void push(int[] nums) {
-
+        for(int a = 0; a < nums.length; a++){
+            push(nums[a]);
+        }
     }
 
     /*
